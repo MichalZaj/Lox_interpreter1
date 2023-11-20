@@ -1,0 +1,147 @@
+Chapter 1-4 (4-Scanner)
+
+Progress:
+Read Chapters 1-4.
+Learned the "Map" of building an interpreter.
+Learned the basics of the Lox language (fairly simple language).
+Started coding in C# using the code snippets in chapter 4.
+
+Chapter 4 Scanning:
+Interpreter Framework:
+Created 4 files: 
+
+Lox.cs:
+Properly take in the arguments.
+Created the Lox class in the namespace Lox_interpeter1.
+Added error handling using an error reporting function, and a public HadError variable.
+Made sure to reset the error flag so it doesn't kil the session.
+
+TokenType.cs:
+Used to categoirze the tokens so that we can remember what kind of lexeme it represents.
+There are different types for each keyword, operator, but of punctuation, and literal type.
+
+Token.cs:
+Take all of the data and wrap it in a class.
+
+Scanner.cs:
+Store the raw source code as a simple string, and then have a list to fill with tokens.
+Append an "EOF" token to make the parser cleaner.
+Uses Start, Current, and Line to keep track of where the scanner is in source code.
+Start wih the lexemes that are only a single character long in scanToken().
+Added multiple helper methods.
+Added an error handler for characters like "@" or "#".
+Added operators.
+Added longer lexemes.
+Added skipping whitespace and newlines.
+Added scanning for string literals using " to end the string.
+Added number literals by recognizing digits.
+Added handling of reserved words and identifiers. ex. "and", "class", "while".
+used a map or for c# a dictionary to store the reserved words.
+
+Scanner tests:
+Test:
+	1 + 2 * 3 - 4 / 5;
+Output:
+NUMBER 1 1
+PLUS +
+NUMBER 2 2
+STAR *
+NUMBER 3 3
+MINUS -
+NUMBER 4 4
+SLASH /
+NUMBER 5 5
+SEMICOLON ;
+EOF
+Test:
+	print "Hello, Lox!\" \n Newline \t Tab";
+Output:
+[line 1] Error: Unexpected character.
+[line 1] Error: Unexpected character.
+[line 1] Error: Unterminated string.
+PRINT print
+STRING "Hello, Lox!\" Hello, Lox!\
+IDENTIFIER n
+IDENTIFIER Newline
+IDENTIFIER t
+IDENTIFIER Tab
+EOF
+Test:
+// This is a single-line comment
+	print "Hello, World!"; // Another comment
+Output:
+PRINT print
+STRING "Hello, World!" Hello, World!
+SEMICOLON ;
+EOF
+Test:
+	if (x > 5) { print "Greater than 5"; }
+Output:
+IF if
+LEFT_PAREN (
+IDENTIFIER x
+GREATER >
+NUMBER 5 5
+RIGHT_PAREN )
+LEFT_BRACE {
+PRINT print
+STRING "Greater than 5" Greater than 5
+SEMICOLON ;
+RIGHT_BRACE }
+EOF
+> else if (x == 5) { print "Equal to 5"; }
+ELSE else
+IF if
+LEFT_PAREN (
+IDENTIFIER x
+EQUAL_EQUAL ==
+NUMBER 5 5
+RIGHT_PAREN )
+LEFT_BRACE {
+PRINT print
+STRING "Equal to 5" Equal to 5
+SEMICOLON ;
+RIGHT_BRACE }
+EOF
+Test:
+	print "Hello, " + name + "!";
+Output:
+PRINT print
+STRING "Hello, " Hello,
+PLUS +
+IDENTIFIER name
+PLUS +
+STRING "!" !
+SEMICOLON ;
+EOF
+
+Test:
+	var a = true and false;
+Output:
+VAR var
+IDENTIFIER a
+EQUAL =
+TRUE true
+AND and
+FALSE false
+SEMICOLON ;
+EOF
+Test:
+	var pi = 3.14159;
+Output:
+VAR var
+IDENTIFIER pi
+EQUAL =
+NUMBER 3.14159 3.14159
+SEMICOLON ;
+EOF
+
+Test(error):
+print "This is an unterminated string;
+[line 1] Error: Unterminated string.
+PRINT print
+EOF
+
+
+
+
