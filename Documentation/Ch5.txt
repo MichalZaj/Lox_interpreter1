@@ -1,0 +1,30 @@
+Chapter 5:
+
+Learned about Context-free grammar and rules for grammars.
+Learned Lox's grammar.
+Implemented Literals, Unary expr, Binary expr, and Parentheses.
+
+Added the following files:
+
+Expr.cs:
+	Used the appendix code to make a a class in which all expressions clases inherit from.
+	The subclasses are then nested inside of each class like the "Binary" one. 
+
+GenerateAst.cs:
+	I tried to implement it in a different namespace similar to how jaava does the packages
+	but was running into too many errors that I felt like were not worth spending time on.
+	I kept this in the entire interpreter namespace I have been working on.
+	The expressions of the expression types was entered into strings.
+	Defined the Ast, which calls the defineType function.
+	Defined the visitor and implemented.
+	
+AstPrinter.cs:
+Implemented the visit methods for each expression type so far.
+Implemented the parenthesize() helper method.
+
+Tested the main given in the textbook and it produced the correct output of:
+(* (- 123) (group 45.67)). Snapshot was taken.
+I learned about the Visitor pattern and implemented a simple example in my code using
+the Pastry example.
+
+Will be deleting the main method in the AstPrinter as it is not needed.
