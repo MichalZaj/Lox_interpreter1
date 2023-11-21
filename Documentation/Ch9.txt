@@ -1,0 +1,35 @@
+Chapter 9-Control Flow
+
+Learned the Concept of the Turing Machine.
+Added the If statement in the GenerateAst.cs.
+Added the IF recognition to the parser in Statement() that calls another method.
+Added an if statement method called IfStatement().
+Added the visit IfStmt.
+Logical operators were implemented in the parser: "or()" and "and()".
+Visit method was implemented.
+Everything in this chapter was fairly simple, as I understand the Interpreter better
+and know the implementations of the visit and adding the proper expressions or stmts.
+
+Tested the new logical operators using the following test in the textbook:
+print "hi" or 2; // "hi".
+print nil or "yes"; // "yes".
+
+Implemented the while loop.
+Basically the same as previous implementations with visit,editing parser, etc.
+
+Implemented the For loop.
+For loop isn't "needed" but makes some code more pleasant to write.
+Learned the concept of "syntactic sugar."
+Concepts of the for Loop I implemented in C#:
+	Initialization
+	Condition
+	Increment
+
+Test:
+
+var a = 0;
+var temp;
+
+for (var b = 1; a < 10000; b = temp + b) {print a; temp = a; a = b;}
+
+Output snippet is included.
