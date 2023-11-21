@@ -1,0 +1,44 @@
+Chapter 8:
+Statements and State
+Added a statement file, 
+
+Stmt.cs:
+Very similar structure to the Expr.cs
+
+Added an environment structure,
+EnvironmentLox.cs:
+Used a dictionary to store the variables names and values.
+Added a Get method to be able to lookup the variable.
+Added an instance of the Environment class to the Interpreter class.
+Added support for nesting using the enclosing variable.
+Added a constructor for the EnvironmentLox class.
+
+
+Work done:
+	Modified the Parse Method so that it parse statements instead of the single 
+	expression it was doing before.
+	Added a method to parse statements (start with print).
+	Each statement gets its own method: Ex. "Print"
+	Modified the Interpret Method in the Interpreter class so that it can accept a list
+	of statement (A program).
+	Fixed the parsing in Run() in Lox.cs
+	
+	Edited the GenerateAst.cs file to include statments.
+	Added the Declaration() method.
+	Ensure that the semicolon is there after variable declaration.
+	
+	Added two new visit methods for the declaring and evaluating.
+	Added assignment capabilites. Visit Method included.
+	
+	Added Block syntax and semantics. Edited Parser.
+	Visit statement added.
+	To execute a block a new environment is created for the block's scope.
+
+Tests:
+var a = "global a";
+var b = "global b";
+var c = "global c";
+{ var a = "outer a"; var b = "outer b"; { var a = "inner a"; print a; print b; print c; } print a; print b; print c; }
+print a;
+print b;
+print c;
