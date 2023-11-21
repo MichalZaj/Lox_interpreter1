@@ -1,0 +1,47 @@
+Chapter 7 Interpreter:
+
+Interpreter does a post-order traversal.
+Sidenote-What is truth?
+
+Added the following files:
+Interpreter.cs:
+	Start with the simplest nodes.
+	Convert the literal tree nodes into a runtime value
+	Did grouping next.
+	Create a helper method called evaluate to send the expression back into the
+	interpreter's visitor
+	Implement evaluating unary expressions.
+	Implement isTruthy.
+	Implement the binary operators.
+	The arithmetic operator of PLUS is different than the others.
+	Implement comparison operators.
+	Equality operators. Goes out to a seperate method.
+	Implemented detecting runtime errors.
+	Added the CheckNumberOperands validator.
+RuntimeError.cs:
+	tracks the token that identifies where in the user's code the runtime error came from
+
+Hooked up the interpeter:
+Added a void method in the Interpeter.cs method called interpret.
+To convert lox values to strings, implemented the stringify in Interpreter.cs.
+Added the RuntimeError function in the Lox.cs file.
+Added an additional variable to track the runtime errors.
+Added an exit code (70) in the RunFile()
+Used the Interpreter in the Lox class.
+Commented out the printer and replaced it with the interpreter code.
+
+
+Tests:
+2 + 3
+5 - 2
+4 * 6
+8 / 2
+2 + 3 * 4
+(2 + 3) * 4
+2 ^ 3
+(5 - 2) * (8 / 2)
+-7
+3.14 * 2.5
+
+Snippet of outputs is in the documentation. Everything works as expected and
+error handling works.
