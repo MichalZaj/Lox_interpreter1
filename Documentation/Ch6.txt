@@ -1,0 +1,38 @@
+Chapter 6 Parser:
+
+Learned about ambiguity and parsing along with other concepts like:
+Precedence
+Associativity
+Left-recursion
+Recursive descent (considered a top-down parser)
+Referencing non-terminals.
+Created a new file called 
+
+Parser.cs:
+Created a class called parser where inside each grammar rule will be a method.
+Started with the first rule: expression.
+Made an equality.
+"Match" method.
+"Check" method if the current token is of a given type.
+"Advance" method: consumes current token and returns it.
+Added some primitive operations.
+Added multiplication and division.
+Unary operators.
+
+
+Detect any errors and tel the user their mistakes:
+Edited the report() function in Lox.cs.
+error should be returned not "thrown."
+Addded the synchronize function.
+Some extra error handling in Primary().
+
+Replaced 5 lines in the run() function in the Lox.cs.
+
+Parser runs, here are some tests:
+1 + 2
+5 - 3
+4 * 6
+8 / 2
+(3 + 4) * 2
+2 * (4 - 1) / (3 + 5)
+2 * (5 + 3) - 4 / 2
