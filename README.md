@@ -25,3 +25,7 @@ Test 241/241 Passed
 ```
 - The output of the tests on my machine is in the "TestOutput.txt" file : [Test Output](TestOutput.txt)
 # Repository Layout
+*   `Chapter_documentation/` – .txt files explaining what was completed at each chapter.
+*   `Chapter_progress/` - The code of the Interpreter developed chapter by chapter
+*   `Lox_Interpreter/` - The Interpreter project folder with all necessary files.
+*   `TestOutput.txt` – Output of the tests.
