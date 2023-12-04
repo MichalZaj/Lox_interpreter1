@@ -11,6 +11,8 @@ Within this assignment, the ChatGPT was used for purposes such as brainstorming,
 - Install Visual Studio on the [official Visual Studio website](https://visualstudio.microsoft.com/).
 - In Visual Studio, click on the "Get Started" tab and go to "Open a project or solution." Find the "Lox_interpeter" folder that is in this repository.
 - In the "Build" tab, click "clean solution" and then "build solution".
+# Usage 
+- Complete Install/Build.
 - Run the interpreter by selecting the "Start" icon.
 - After clicking start, a terminal window will showup where you can code in Lox!
 # Testing
