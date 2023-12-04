@@ -16,7 +16,7 @@ Within this assignment, the ChatGPT was used for purposes such as brainstorming,
 # Testing
 - Tests are in the "Lox_Interpreter/test" folder.
 - To run the tests, go to the "Debug" tab in Visual Studio.
-- In the "Debug tab" add the command line arguments "--test path/to/test/repo"
+- In the "Debug" tab add the command line arguments "--test path/to/test/repo"
 - Ex. of Command line arguments: "--test C:\Users\Micha\source\repos\Lox_Interpreter1\test"
 - Click "Start" and the tests will run.
 The following should be the end output:
